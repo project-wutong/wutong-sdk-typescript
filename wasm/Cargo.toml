@@ -1,0 +1,20 @@
+[package]
+name = "wutong-wasm"
+description = "WebAssembly bindings of the Wutong Protocol Rust core for the TypeScript SDK"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+license = "AGPL-3.0-only"
+repository = "https://github.com/project-wutong/wutong-sdk-typescript"
+publish = false
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+wutong-core = { git = "https://github.com/project-wutong/wutong-core", branch = "main" }
+wasm-bindgen = "0.2"
+hex = "0.4"
+
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = false

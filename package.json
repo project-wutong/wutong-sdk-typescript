@@ -1,0 +1,21 @@
+{
+  "name": "@project-wutong/wutong",
+  "version": "0.1.0",
+  "description": "Wutong Protocol (WTP wutong/0.1) SDK for TypeScript/JavaScript, backed by the Rust core via WebAssembly",
+  "license": "AGPL-3.0-only",
+  "repository": "github:project-wutong/wutong-sdk-typescript",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist", "pkg"],
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build:wasm": "wasm-pack build wasm --release --target nodejs --out-dir ../pkg --out-name wutong_wasm",
+    "build": "npm run build:wasm && tsc -p tsconfig.json",
+    "test": "node --test test/"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.6.0"
+  }
+}
